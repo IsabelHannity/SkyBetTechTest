@@ -1,0 +1,14 @@
+<app-header>
+  <mat-icon icon>payments</mat-icon>
+  <span heading>SkyBet</span>
+</app-header>
+<mat-card>
+  <mat-list>
+    <div mat-subheader>SPORTS</div>
+    <mat-list-item *ngFor="let sport of sports" [routerLink]="sport.url">
+      <mat-icon mat-list-icon>{{ sport.icon }}</mat-icon>
+      <div mat-line>{{ sport.heading }}</div>
+      <div mat-line>{{ sport.subHeading }}</div>
+    </mat-list-item>
+  </mat-list>
+</mat-card>

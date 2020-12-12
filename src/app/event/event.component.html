@@ -1,0 +1,63 @@
+<ng-container *ngIf="event$ | async as event">
+  <app-header>
+    <mat-icon icon>{{ selectedSport?.icon || "payments" }}</mat-icon>
+    <span heading
+      >{{ selectedSport?.heading || "SkyBet" }} - {{ event.eventId }}</span
+    >
+  </app-header>
+
+  <div class="card text-center">
+    <div class="card-header">
+      {{ event.linkedEventTypeName || "Miscellaneous" }} - {{ event.eventId }}
+    </div>
+    <div class="card-body">
+      <div class="team">
+        <mat-icon
+          color="primary"
+          aria-hidden="false"
+          aria-label="Example home icon"
+          >sports_soccer</mat-icon
+        >
+        <h2>
+          {{ event.competitors[0].name }}
+          <span class="badge badge-primary">{{
+            event.scores[event.competitors[0].position]
+          }}</span>
+        </h2>
+      </div>
+      <h1>v/s</h1>
+      <div class="team">
+        <mat-icon
+          color="accent"
+          aria-hidden="false"
+          aria-label="Example home icon"
+          >sports_soccer</mat-icon
+        >
+        <h2>
+          {{ event.competitors[1].name }}
+          <span class="badge badge-primary">{{
+            event.scores[event.competitors[1].position]
+          }}</span>
+        </h2>
+      </div>
+    </div>
+    <div class="card-footer text-muted">
+      {{ event.startTime | date: "medium" }}
+    </div>
+  </div>
+  <mat-button-toggle-group
+    #group="matButtonToggleGroup"
+    name="oddsType"
+    aria-label="Odds Type"
+  >
+    <mat-button-toggle value="decimal">DECIMAL</mat-button-toggle>
+    <mat-button-toggle value="fraction">FRACTION</mat-button-toggle>
+  </mat-button-toggle-group>
+  <app-market
+    *ngFor="let marketId of event.markets"
+    [marketId]="marketId"
+    [eventId]="event.eventId"
+    [oddsType]="group.value"
+  >
+  </app-market>
+</ng-container>

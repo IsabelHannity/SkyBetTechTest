@@ -1,0 +1,29 @@
+<mat-accordion *ngIf="market">
+  <mat-expansion-panel
+    (opened)="panelOpenState = true"
+    (closed)="panelOpenState = false"
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ market.name }} -
+        {{
+          market.status.live
+            ? "Live"
+            : market.status.suspended
+            ? "Suspended"
+            : ""
+        }}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-list role="list">
+      <app-outcome
+        *ngFor="let outcomeId of market.outcomes"
+        [eventId]="eventId"
+        [marketId]="marketId"
+        [outcomeId]="outcomeId"
+        [oddsType]="oddsType"
+      >
+      </app-outcome>
+    </mat-list>
+  </mat-expansion-panel>
+</mat-accordion>

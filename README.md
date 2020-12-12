@@ -2,26 +2,22 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.0.
 
-## Development server
+## Why Angular?
+
+Angular is a pretty self sufficient framework that has most of the capabilities that we'll need in an App like this.
+
+It has things like `WebSocketSubject` which I used as the WebSocket Client.
+
+Angular supports `TypeScript` out of the box and it definitely comes in really handy when working on complex applications like these.
+
+Angular has a better separation of concerns throughout, from Angular Modules to a Component having separate files for markup, styles, and logic.
+
+Finally, I've been using Angular for quite some time now and I was at ease with Angular.
+
+## Running the Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
