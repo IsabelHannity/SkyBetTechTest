@@ -1,10 +1,10 @@
-import { WSMessage, Event } from './../../models/';
 import { catchError, tap } from 'rxjs/operators';
 import { EMPTY, Subject } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { webSocket, WebSocketSubject } from 'rxjs/webSocket';
 
 import { environment } from '../../../environments/environment';
+import { Event, WSMessage } from './../../models/';
 import { WSEventTypes } from './../../constants';
 
 export const WS_ENDPOINT = environment.wsEndpoint;
@@ -29,7 +29,7 @@ export class DataService {
     this.connect();
   }
 
-  public connect(): void {
+  private connect(): void {
     if (!this.socket$ || this.socket$.closed) {
       this.socket$ = this.getNewWebSocket();
       this.socket$

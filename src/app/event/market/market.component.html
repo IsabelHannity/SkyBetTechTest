@@ -3,14 +3,14 @@
     (opened)="panelOpenState = true"
     (closed)="panelOpenState = false"
   >
-    <mat-expansion-panel-header>
+    <mat-expansion-panel-header [class.suspended]="market.status.suspended">
       <mat-panel-title>
         {{ market.name }} -
         {{
-          market.status.live
-            ? "Live"
-            : market.status.suspended
+          market.status.suspended
             ? "Suspended"
+            : market.status.live
+            ? "Live"
             : ""
         }}
       </mat-panel-title>

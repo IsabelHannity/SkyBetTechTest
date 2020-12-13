@@ -8,9 +8,8 @@ describe('OutcomeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OutcomeComponent ]
-    })
-    .compileComponents();
+      declarations: [OutcomeComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -21,5 +20,12 @@ describe('OutcomeComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should render an mat-list-item', () => {
+    const fixture = TestBed.createComponent(OutcomeComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('mat-list-item')).toBeDefined();
   });
 });
