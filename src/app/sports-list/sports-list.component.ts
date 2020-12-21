@@ -1,6 +1,6 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 
-import { Sport } from '../models/sport';
+import { Sport } from '../models';
 import { SportsList } from '../constants';
 
 @Component({

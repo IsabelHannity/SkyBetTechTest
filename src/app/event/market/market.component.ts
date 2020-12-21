@@ -25,7 +25,7 @@ export class MarketComponent implements OnChanges {
       });
       this.dataService.sendMessage({
         type: 'subscribe',
-        keys: [`m.${this.eventId}`],
+        keys: [`m.${this.marketId}`],
         clearSubscription: false,
       });
       this.subscription = this.dataService.market$.subscribe((market: any) => {
